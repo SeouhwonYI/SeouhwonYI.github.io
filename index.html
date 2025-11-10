@@ -34,10 +34,10 @@
         <button id="theme-toggle"
                 type="button"
                 aria-label="Toggle dark mode"
-                class="text-sm font-semibold px-3 py-1.5 rounded-xl border border-slate-300/60 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800"
-                onclick="toggleTheme()">
+                class="text-sm font-semibold px-3 py-1.5 ...">
           <span id="theme-emoji" aria-hidden="true">🌙</span>
         </button>
+
         <!-- CV -->
         <a href="./uploads/cv.pdf"
            class="text-sm font-semibold px-3 py-1.5 rounded-xl bg-[var(--accent)] text-white shadow hover:opacity-90">
@@ -97,11 +97,11 @@
           <p>
             I study sequential decision making, bandit algorithms, reinforcement learning, and statistical machine learning.
             I am a Ph.D. candidate in the 
-            <a href="https://gsds.snu.ac.kr/" target="_blank" rel="noopener" class="text-[var(--accent)]">
+            <a href="https://gsds.snu.ac.kr/" target="_blank" rel="noopener" class="text-[var(--accent)] hover:underline">
               Graduate School of Data Science
             </a>
             at Seoul National University, under the supervision of Prof. 
-            <a href="https://minoh.io/" target="_blank" rel="noopener" class="text-[var(--accent)]">
+            <a href="https://minoh.io/" target="_blank" rel="noopener" class="text-[var(--accent)] hover:underline">
               Min-hwan Oh
             </a>.
             <br><br>
@@ -213,28 +213,29 @@
 
   <!-- Theme script: keep this inline and unique -->
   <script>
-  (function () {
+  document.addEventListener("DOMContentLoaded", () => {
     const KEY = "theme";
+    const btn = document.getElementById("theme-toggle");
+    const emoji = document.getElementById("theme-emoji");
+
     function setEmoji(isDark) {
-      const el = document.getElementById("theme-emoji");
-      if (el) el.textContent = isDark ? "🌞" : "🌙";
+      if (emoji) emoji.textContent = isDark ? "🌞" : "🌙";
     }
-    function apply(isDark) {
+    function applyTheme(isDark) {
       document.documentElement.classList.toggle("dark", isDark);
       localStorage.setItem(KEY, isDark ? "dark" : "light");
       setEmoji(isDark);
     }
-    // initial: saved > system
+
     const saved = localStorage.getItem(KEY);
     const initialDark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
-    apply(initialDark);
+    applyTheme(initialDark);
 
-    // global toggler
-    window.toggleTheme = function () {
+    btn?.addEventListener("click", () => {
       const nowDark = !document.documentElement.classList.contains("dark");
-      apply(nowDark);
-    };
-  })();
+      applyTheme(nowDark);
+    });
+  });
   </script>
 
   <!-- Publications renderer; ensure this file does NOT contain theme code -->
