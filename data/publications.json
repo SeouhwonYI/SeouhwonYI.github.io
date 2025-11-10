@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Exploration via Feature Perturbation in Contextual Bandits",
+    "authors": ["Seouh-won Yi", "Min-hwan Oh"],
+    "year": 2025,
+    "venue": "arXiv:2503.01234",
+    "arxiv": "2503.01234",
+    "pdf": "https://arxiv.org/pdf/2503.01234.pdf",
+    "code": "https://github.com/your/repo",
+    "bibtex": "https://arxiv.org/abs/2503.01234"
+  },
+  {
+    "title": "Contextual Bandits with Pairwise Parameterization",
+    "authors": ["Seouh-won Yi", "Coauthor A", "Coauthor B"],
+    "year": 2024,
+    "venue": "Conference XYZ",
+    "url": "https://doi.org/10.xxxx/xyz.2024.12345",
+    "pdf": "https://your-site/uploads/yi2024.pdf"
+  }
+]
