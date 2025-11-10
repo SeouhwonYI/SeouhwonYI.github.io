@@ -3,18 +3,18 @@
     "title": "Exploration via Feature Perturbation in Contextual Bandits",
     "authors": ["Seouh-won Yi", "Min-hwan Oh"],
     "year": 2025,
-    "venue": "arXiv:2503.01234",
-    "arxiv": "2503.01234",
-    "pdf": "yi2025-feature-perturbation.pdf",
-    "code": "https://github.com/your/repo",
-    "bibtex": "https://arxiv.org/abs/2503.01234"
+    "venue": "NeurIPS 2025 (Spotlight)",
+    "arxiv": "2510.17390",
+    "url": "https://arxiv.org/abs/2510.17390",
+    "pdf": "exploration_FP.pdf"
   },
   {
-    "title": "Contextual Bandits with Pairwise Parameterization",
-    "authors": ["Seouh-won Yi", "Coauthor A", "Coauthor B"],
-    "year": 2024,
-    "venue": "Conference XYZ",
-    "url": "https://doi.org/10.xxxx/xyz.2024.12345",
-    "pdf": "exploration_FP.pdf"
+    "title": "Preference-based Reinforcement Learning beyond Pairwise Comparisons: Benefits of Multiple Options",
+    "authors": ["Joongkyu Lee", "Seouh-won Yi", "Min-hwan Oh"],
+    "year": 2025,
+    "venue": "NeurIPS 2025",
+    "arxiv": "2510.18713",
+    "url": "https://arxiv.org/abs/2510.18713",
+    "pdf": "https://arxiv.org/pdf/2510.18713"
   }
 ]
