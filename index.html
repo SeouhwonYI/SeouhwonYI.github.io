@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Seouh-won Yi — Personal Site</title>
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png">
   <meta name="description" content="Ph.D. candidate in Data Science. Research in contextual bandits, RL, and statistical ML." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,14 +31,6 @@
         <a href="#contact" class="hover:text-[var(--accent)]">Contact</a>
       </nav>
       <div class="flex items-center gap-3">
-        <!-- Dark mode emoji toggle -->
-        <button id="theme-toggle"
-                type="button"
-                aria-label="Toggle dark mode"
-                class="text-sm font-semibold px-3 py-1.5 ...">
-          <span id="theme-emoji" aria-hidden="true">🌙</span>
-        </button>
-
         <!-- CV -->
         <a href="./uploads/cv.pdf"
            class="text-sm font-semibold px-3 py-1.5 rounded-xl bg-[var(--accent)] text-white shadow hover:opacity-90">
@@ -97,11 +90,11 @@
           <p>
             I study sequential decision making, bandit algorithms, reinforcement learning, and statistical machine learning.
             I am a Ph.D. candidate in the 
-            <a href="https://gsds.snu.ac.kr/" target="_blank" rel="noopener" class="text-[var(--accent)] hover:underline">
+            <a href="https://gsds.snu.ac.kr/" target="_blank" rel="noopener" class="text-[var(--accent)] no-underline">
               Graduate School of Data Science
             </a>
             at Seoul National University, under the supervision of Prof. 
-            <a href="https://minoh.io/" target="_blank" rel="noopener" class="text-[var(--accent)] hover:underline">
+            <a href="https://minoh.io/" target="_blank" rel="noopener" class="text-[var(--accent)] no-underline">
               Min-hwan Oh
             </a>.
             <br><br>
@@ -210,33 +203,6 @@
       <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     </footer>
   </main>
-
-  <!-- Theme script: keep this inline and unique -->
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const KEY = "theme";
-    const btn = document.getElementById("theme-toggle");
-    const emoji = document.getElementById("theme-emoji");
-
-    function setEmoji(isDark) {
-      if (emoji) emoji.textContent = isDark ? "🌞" : "🌙";
-    }
-    function applyTheme(isDark) {
-      document.documentElement.classList.toggle("dark", isDark);
-      localStorage.setItem(KEY, isDark ? "dark" : "light");
-      setEmoji(isDark);
-    }
-
-    const saved = localStorage.getItem(KEY);
-    const initialDark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
-    applyTheme(initialDark);
-
-    btn?.addEventListener("click", () => {
-      const nowDark = !document.documentElement.classList.contains("dark");
-      applyTheme(nowDark);
-    });
-  });
-  </script>
 
   <!-- Publications renderer; ensure this file does NOT contain theme code -->
   <script>
