@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Joongkyu Lee — Personal Site</title>
+  <meta name="description" content="Ph.D. candidate — Sequential decision making, bandit algorithms, RL, statistical ML." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // theme toggle: default to system, persist choice
+    const themeStorageKey = 'theme';
+    function setTheme(t){
+      const root = document.documentElement;
+      if(t==='dark' || (t!=='light' && window.matchMedia('(prefers-color-scheme: dark)').matches)) root.classList.add('dark');
+      else root.classList.remove('dark');
+      localStorage.setItem(themeStorageKey, t);
+    }
+    function initTheme(){ setTheme(localStorage.getItem(themeStorageKey) || 'system'); }
+    document.addEventListener('DOMContentLoaded', initTheme);
+  </script>
+  <style>
+    :root { --accent: #7c9cff; }
+    html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    .prose a { text-decoration: underline; text-underline-offset: 2px; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100">
+  <!-- Navbar -->
+  <header class="sticky top-0 z-30 backdrop-blur bg-white/60 dark:bg-slate-900/60 border-b border-slate-200/60 dark:border-slate-700/60">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#top" class="font-extrabold tracking-tight text-xl">Joongkyu Lee</a>
+      <nav class="hidden sm:flex gap-6 text-sm">
+        <a href="#about" class="hover:text-[var(--accent)]">Home</a>
+        <a href="#pubs" class="hover:text-[var(--accent)]">Publications</a>
+        <a href="#teaching" class="hover:text-[var(--accent)]">Teaching</a>
+        <a href="#contact" class="hover:text-[var(--accent)]">Contact</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button aria-label="Toggle theme" class="p-2 rounded-xl border border-slate-300/60 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800" onclick="setTheme(document.documentElement.classList.contains('dark') ? 'light' : 'dark')">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M21.64 13a1 1 0 0 0-1.05-.14A8 8 0 1 1 11.14 3.41a1 1 0 0 0-.14-1 1 1 0 0 0-1.09-.27 10 10 0 1 0 12 12 1 1 0 0 0-.27-1.09Z"/></svg>
+        </button>
+        <a href="cv.pdf" class="text-sm font-semibold px-3 py-1.5 rounded-xl bg-[var(--accent)] text-white shadow hover:opacity-90">CV</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero / About -->
+  <main id="about" class="max-w-5xl mx-auto px-4">
+    <section class="py-12 sm:py-16">
+      <div class="grid grid-cols-1 sm:grid-cols-[240px,1fr] gap-8 items-start">
+        <div class="flex flex-col items-center sm:items-start">
+          <img src="headshot.jpg" alt="Profile photo" class="w-48 h-48 rounded-full object-cover ring-4 ring-white dark:ring-slate-800 shadow" />
+          <div class="mt-4 text-center sm:text-left">
+            <h1 class="text-3xl font-extrabold tracking-tight">Joongkyu Lee</h1>
+            <p class="mt-1 text-slate-600 dark:text-slate-300">Ph.D. candidate in Data Science</p>
+            <p class="text-slate-600 dark:text-slate-300">Seoul National University</p>
+            <p class="mt-2"><a class="hover:text-[var(--accent)]" href="mailto:jkleexxxx@snu.ac.kr">jkleexxxx@snu.ac.kr</a></p>
+            <div class="mt-3 flex gap-3 justify-center sm:justify-start">
+              <a aria-label="Google Scholar" class="p-2 rounded-lg border border-slate-300/60 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">GS</a>
+              <a aria-label="Github" class="p-2 rounded-lg border border-slate-300/60 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">GitHub</a>
+              <a aria-label="Twitter" class="p-2 rounded-lg border border-slate-300/60 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800" href="#">X</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="prose dark:prose-invert max-w-none">
+          <p>
+            I am a Ph.D. candidate in the <a href="#">Graduate School of Data Science</a> at Seoul National University, advised by <a href="#">Prof. Min-hwan Oh</a>. My research spans sequential decision making, bandit algorithms, reinforcement learning, and statistical machine learning. I aim to build algorithms that are
+            <strong>theoretically provable</strong> and <strong>practically implementable</strong>.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/60 dark:bg-slate-800/60 shadow-sm">
+              <h2 class="font-bold tracking-tight">Interests</h2>
+              <ul class="mt-2 list-disc pl-5 marker:text-[var(--accent)]">
+                <li>Sequential Decision Making</li>
+                <li>Reinforcement Learning</li>
+                <li>Bandit Algorithms</li>
+                <li>Statistical Machine Learning</li>
+                <li>Optimization</li>
+              </ul>
+            </div>
+            <div class="p-5 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/60 dark:bg-slate-800/60 shadow-sm">
+              <h2 class="font-bold tracking-tight">Education</h2>
+              <ul class="mt-2 space-y-2">
+                <li>
+                  <div class="flex items-start gap-3">
+                    <span class="mt-1">🎓</span>
+                    <div>
+                      <div class="font-semibold">Ph.D. candidate in Data Science, 2023–Present</div>
+                      <div class="text-sm text-slate-600 dark:text-slate-300">Seoul National University</div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex items-start gap-3">
+                    <span class="mt-1">🎓</span>
+                    <div>
+                      <div class="font-semibold">MS in Data Science, 2023</div>
+                      <div class="text-sm text-slate-600 dark:text-slate-300">Seoul National University</div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex items-start gap-3">
+                    <span class="mt-1">🎓</span>
+                    <div>
+                      <div class="font-semibold">BS in Industrial Engineering, 2016</div>
+                      <div class="text-sm text-slate-600 dark:text-slate-300">Yonsei University</div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications section -->
+    <section id="pubs" class="py-12 border-t border-slate-200 dark:border-slate-700">
+      <h2 class="text-2xl font-extrabold tracking-tight">Publications & Preprints</h2>
+      <ol class="mt-6 space-y-6">
+        <!-- Repeat li for more papers -->
+        <li class="p-5 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/60 dark:bg-slate-800/60">
+          <div class="text-sm text-slate-500 dark:text-slate-400">2025</div>
+          <div class="font-semibold">
+            Exploration via Feature Perturbation in Contextual Bandits
+          </div>
+          <div class="text-sm">J. Lee, S. Yi, M.-h. Oh</div>
+          <div class="mt-2 flex gap-3 text-sm">
+            <a class="hover:text-[var(--accent)]" href="#">PDF</a>
+            <a class="hover:text-[var(--accent)]" href="#">Code</a>
+            <a class="hover:text-[var(--accent)]" href="#">BibTeX</a>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Teaching section -->
+    <section id="teaching" class="py-12 border-t border-slate-200 dark:border-slate-700">
+      <h2 class="text-2xl font-extrabold tracking-tight">Teaching</h2>
+      <ul class="mt-6 space-y-3">
+        <li class="p-5 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/60 dark:bg-slate-800/60">
+          2024 Fall — TA, Bandit Algorithms (GSDS 5xxx)
+        </li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-12 border-t border-slate-200 dark:border-slate-700">
+      <h2 class="text-2xl font-extrabold tracking-tight">Contact</h2>
+      <p class="mt-4">Email is best. For code and datasets, see GitHub and Google Scholar links above. I do not maintain social DMs.</p>
+    </section>
+
+    <footer class="py-12 border-t border-slate-200 dark:border-slate-700 text-sm text-slate-500 dark:text-slate-400">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>© <span id="year"></span> Your Name. All rights reserved.</div>
+        <div>
+          Built with a single HTML file and Tailwind via CDN. Easy to host on GitHub Pages.
+        </div>
+      </div>
+      <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+  </main>
+</body>
+</html>
